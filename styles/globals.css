@@ -1,0 +1,73 @@
+:root {
+  --font: "Times New Roman", serif;
+  --color-black: rgb(10, 10, 10);
+  --color-white: rgb(250, 250, 250);
+  --color-blue: rgb(55, 55, 185);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+  height: 100%;
+}
+
+@media (min-width: 35em) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 40em) {
+  html {
+    font-size: 22px;
+  }
+}
+
+@media (min-width: 45em) {
+  html {
+    font-size: 24px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font);
+  font-weight: 400;
+  height: 100%;
+  line-height: 1.5;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+/* Inherit text color for links */
+
+a {
+  color: var(--color-blue);
+}
+
+/* No image link borders by default */
+
+a img {
+  border: 0;
+}
+
+/* Allow using i for italic text */
+
+i {
+  font-style: italic;
+}

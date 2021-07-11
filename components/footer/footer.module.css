@@ -1,0 +1,8 @@
+.container {
+  font-size: calc(2 / 3 * 1rem);
+  text-align: center;
+}
+
+.link {
+  margin-right: 0.5rem;
+}

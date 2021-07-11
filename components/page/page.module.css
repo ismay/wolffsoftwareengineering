@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header,
+.content,
+.footer {
+  margin: 0 auto;
+  max-width: calc(60ch + 2rem);
+}
+
+.header,
+.footer {
+  flex: none;
+}
+
+.header {
+  padding: 2rem 1rem 1rem;
+  width: 100%;
+}
+
+.content {
+  flex: 1 0 auto;
+  padding: 1rem;
+}
+
+.footer {
+  padding: 1rem 1rem 2rem;
+}
