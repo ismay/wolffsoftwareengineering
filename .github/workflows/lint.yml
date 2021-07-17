@@ -1,16 +1,35 @@
-name: lint
+name: Lint
 
 on: [push]
 
+concurrency:
+  group: ${{ github.workflow}}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  lint:
+  eslint:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: "14"
+      - uses: c-hive/gha-npm-cache@v1
       - run: npm ci --ignore-scripts
-      - run: npm run lint:js
-      - run: npm run lint:css
+      - run: npm run lint:eslint
+
+  stylelint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+      - uses: c-hive/gha-npm-cache@v1
+      - run: npm ci --ignore-scripts
+      - run: npm run lint:stylelint
+
+  prettier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+      - uses: c-hive/gha-npm-cache@v1
+      - run: npm ci --ignore-scripts
       - run: npm run lint:prettier
