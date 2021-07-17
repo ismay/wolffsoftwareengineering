@@ -42,6 +42,7 @@
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-mdx": "^1.14.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sort": "^1.5.0",
@@ -60,7 +61,7 @@
     "not IE 11"
   ],
   "lint-staged": {
-    "*.js": [
+    "*.{js,mdx}": [
       "eslint --fix"
     ],
     "*.css": [
@@ -77,6 +78,7 @@
       "airbnb/hooks",
       "plugin:sort/recommended",
       "plugin:cypress/recommended",
+      "plugin:mdx/recommended",
       "prettier"
     ],
     "rules": {
