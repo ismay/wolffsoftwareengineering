@@ -1,7 +1,5 @@
 const links = [
-  // Header
   { href: "/", name: "Wolff Software Engineering" },
-  // Footer
   { href: "mailto:ismay@wolffsoftwareengineering.nl", name: "Email" },
   { href: "https://github.com/ismay", name: "Github" },
   {
@@ -18,6 +16,7 @@ const terms = [
 describe("error", () => {
   it("renders as expected", () => {
     cy.visit("/should-not-exist", { failOnStatusCode: false });
+    cy.injectAxe();
 
     // Ensure the appropriate status code
     cy.request({
@@ -46,6 +45,7 @@ describe("error", () => {
       });
     });
 
+    cy.checkA11y();
     cy.percySnapshot("error page renders as expected");
   });
 });

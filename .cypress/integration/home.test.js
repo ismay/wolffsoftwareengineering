@@ -1,7 +1,5 @@
 const links = [
-  // Header
   { href: "/", name: "Wolff Software Engineering" },
-  // Body
   { href: "http://danieloverbeek.com/", name: "Daniel Overbeek" },
   { href: "https://github.com/segmentio/metalsmith", name: "metalsmith" },
   {
@@ -13,7 +11,6 @@ const links = [
     name: "stylelint-no-unsupported-browser-features",
   },
   { href: "mailto:ismay@wolffsoftwareengineering.nl", name: "contact me" },
-  // Footer
   { href: "mailto:ismay@wolffsoftwareengineering.nl", name: "Email" },
   { href: "https://github.com/ismay", name: "Github" },
   {
@@ -30,6 +27,7 @@ const terms = [
 describe("home", () => {
   it("renders as expected", () => {
     cy.visit("/");
+    cy.injectAxe();
 
     // Ensure expected links are all present
     links.forEach(({ href, name }) => {
@@ -49,6 +47,7 @@ describe("home", () => {
       });
     });
 
+    cy.checkA11y();
     cy.percySnapshot("home page renders as expected");
   });
 });

@@ -8,6 +8,7 @@ export default function Logo() {
       fillRule="evenodd"
       strokeLinejoin="round"
       strokeMiterlimit={2}
+      title="Wolff Software Engineering"
       viewBox="0 0 1400 752"
       xmlns="http://www.w3.org/2000/svg"
     >

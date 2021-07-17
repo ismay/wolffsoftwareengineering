@@ -10,9 +10,9 @@ export default function Page({ children }) {
         <Header />
       </div>
       <main className={s.content}>{children}</main>
-      <footer className={s.footer}>
+      <div className={s.footer}>
         <Footer />
-      </footer>
+      </div>
     </div>
   );
 }
