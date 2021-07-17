@@ -9,9 +9,6 @@ export default function Footer() {
       <a className={s.link} href="https://github.com/ismay">
         Github
       </a>
-      <a className={s.link} href="https://gitlab.com/ismay">
-        Gitlab
-      </a>
       <a
         className={s.link}
         href="https://www.linkedin.com/in/wolffsoftwareengineering"
