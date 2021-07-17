@@ -8,7 +8,9 @@
     "lint:eslint": "eslint --ignore-path .gitignore .",
     "lint:prettier": "prettier --ignore-path .gitignore --check .",
     "lint:stylelint": "stylelint --ignore-path .gitignore '**/*.css'",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "storybook:build": "build-storybook",
+    "storybook:start": "start-storybook -p 6006 --quiet"
   },
   "dependencies": {
     "next": "^11.0.1",
@@ -17,6 +19,11 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/addon-links": "^6.3.4",
+    "@storybook/builder-webpack5": "^6.3.4",
+    "@storybook/manager-webpack5": "^6.3.4",
+    "@storybook/react": "^6.3.4",
     "eslint": "^7.30.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "^11.0.1",
@@ -104,7 +111,38 @@
           "callbacksLast": true
         }
       ]
-    }
+    },
+    "ignorePatterns": [
+      "!.storybook/"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "*.stories.js"
+        ],
+        "rules": {
+          "react/function-component-definition": [
+            "error",
+            {
+              "namedComponents": "arrow-function",
+              "unnamedComponents": "arrow-function"
+            }
+          ],
+          "react/no-multi-comp": "off",
+          "react/jsx-props-no-spreading": "off",
+          "import/no-extraneous-dependencies": "off"
+        }
+      },
+      {
+        "files": [
+          ".storybook/**/*.js"
+        ],
+        "rules": {
+          "no-param-reassign": "off",
+          "import/prefer-default-export": "off"
+        }
+      }
+    ]
   },
   "stylelint": {
     "extends": [
