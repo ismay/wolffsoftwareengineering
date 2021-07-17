@@ -1,0 +1,24 @@
+name: Test
+
+on: [push]
+
+concurrency:
+  group: ${{ github.workflow}}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  e2e:
+    if: github.repository_owner == 'ismay' && github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cypress-io/github-action@v2
+        with:
+          start: npm run dev
+          wait-on: "npx wait-on -s 1 http://localhost:3000"
+          config-file: .cypress/cypress.json
+          command-prefix: "percy exec -- npx"
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          NODE_ENV: "test"

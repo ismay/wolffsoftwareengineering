@@ -10,7 +10,10 @@
     "lint:stylelint": "stylelint --ignore-path .gitignore '**/*.css'",
     "prepare": "husky install",
     "storybook:build": "build-storybook",
-    "storybook:start": "start-storybook -p 6006 --quiet"
+    "storybook:start": "start-storybook -p 6006 --quiet",
+    "pretest:e2e": "NODE_ENV=test npm run dev & wait-on -s 1 http://localhost:3000",
+    "test:e2e": "cypress open --config-file .cypress/cypress.json",
+    "posttest:e2e": "kill-port 3000"
   },
   "dependencies": {
     "next": "^11.0.1",
@@ -19,27 +22,34 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@percy/cli": "^1.0.0-beta.58",
+    "@percy/cypress": "^3.1.0",
     "@storybook/addon-essentials": "^6.3.4",
     "@storybook/addon-links": "^6.3.4",
     "@storybook/builder-webpack5": "^6.3.4",
     "@storybook/manager-webpack5": "^6.3.4",
     "@storybook/react": "^6.3.4",
+    "@testing-library/cypress": "^7.0.6",
+    "cypress": "^7.7.0",
     "eslint": "^7.30.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "^11.0.1",
     "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sort": "^1.5.0",
     "husky": "^7.0.1",
+    "kill-port": "^1.6.1",
     "lint-staged": "^11.0.1",
     "prettier": "^2.3.2",
     "stylelint": "^13.13.1",
     "stylelint-config-prettier": "^8.0.2",
     "stylelint-config-standard": "^22.0.0",
-    "stylelint-order": "^4.1.0"
+    "stylelint-order": "^4.1.0",
+    "wait-on": "^6.0.0"
   },
   "browserslist": [
     "defaults",
@@ -62,6 +72,7 @@
       "airbnb",
       "airbnb/hooks",
       "plugin:sort/recommended",
+      "plugin:cypress/recommended",
       "prettier"
     ],
     "rules": {
@@ -113,6 +124,7 @@
       ]
     },
     "ignorePatterns": [
+      "!.cypress/",
       "!.storybook/"
     ],
     "overrides": [
@@ -141,6 +153,15 @@
           "no-param-reassign": "off",
           "import/prefer-default-export": "off"
         }
+      },
+      {
+        "files": [
+          ".cypress/**/*.js"
+        ],
+        "rules": {
+          "no-unused-expressions": "off",
+          "import/no-extraneous-dependencies": "off"
+        }
       }
     ]
   },
@@ -158,6 +179,15 @@
         "declarations"
       ],
       "order/properties-alphabetical-order": true
+    }
+  },
+  "percy": {
+    "version": 2,
+    "snapshot": {
+      "widths": [
+        1280
+      ],
+      "min-height": 800
     }
   }
 }
