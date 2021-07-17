@@ -1,3 +1,9 @@
+.image {
+  border: 2px solid var(--color-blue);
+  max-width: 100%;
+  padding: 2px;
+}
+
 .description {
   font-size: calc(2 / 3 * 1rem);
   font-style: italic;
