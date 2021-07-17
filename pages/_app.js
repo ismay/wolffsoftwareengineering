@@ -22,9 +22,9 @@ export default function App({ Component, pageProps }) {
         />
         <script
           async
+          defer
           data-dnt="false"
           data-host="https://microanalytics.io"
-          defer
           id="ZwSg9rf6GA"
           src="https://microanalytics.io/js/script.js"
         />
