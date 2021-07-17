@@ -7,6 +7,7 @@
 - `CHROMATIC_PROJECT_TOKEN`
 - `GITHUB_TOKEN`
 - `PERCY_TOKEN`
+- `VERCEL_TOKEN`
 
 ## Browserstack
 
