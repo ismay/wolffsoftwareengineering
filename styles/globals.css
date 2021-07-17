@@ -63,9 +63,3 @@ a {
 a img {
   border: 0;
 }
-
-/* Allow using i for italic text */
-
-i {
-  font-style: italic;
-}
