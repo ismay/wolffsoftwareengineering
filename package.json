@@ -22,6 +22,8 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^11.0.1",
     "@percy/cli": "^1.0.0-beta.58",
     "@percy/cypress": "^3.1.0",
     "@storybook/addon-essentials": "^6.3.4",
@@ -64,7 +66,7 @@
     "*.css": [
       "stylelint --fix"
     ],
-    "*.{js,css,json,md,yml}": [
+    "*.{js,css,json,md,mdx,yml}": [
       "prettier --write"
     ]
   },
