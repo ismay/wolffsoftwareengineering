@@ -16,14 +16,14 @@
     "posttest:e2e": "kill-port 3000"
   },
   "dependencies": {
+    "graphql-request": "^3.4.0",
     "next": "^11.0.1",
+    "next-mdx-remote": "^3.0.4",
     "prop-types": "^15.7.2",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@mdx-js/loader": "^1.6.22",
-    "@next/mdx": "^11.0.1",
     "@percy/cli": "^1.0.0-beta.60",
     "@percy/cypress": "^3.1.1",
     "@storybook/addon-essentials": "^6.3.6",
@@ -42,7 +42,6 @@
     "eslint-plugin-cypress": "^2.11.3",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-mdx": "^1.14.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-sort": "^1.5.0",
@@ -61,13 +60,13 @@
     "not IE 11"
   ],
   "lint-staged": {
-    "*.{js,mdx}": [
+    "*.js": [
       "eslint --fix"
     ],
     "*.css": [
       "stylelint --fix"
     ],
-    "*.{js,css,json,md,mdx,yml}": [
+    "*.{js,css,json,md,yml}": [
       "prettier --write"
     ]
   },
@@ -78,7 +77,6 @@
       "airbnb/hooks",
       "plugin:sort/recommended",
       "plugin:cypress/recommended",
-      "plugin:mdx/recommended",
       "prettier"
     ],
     "rules": {

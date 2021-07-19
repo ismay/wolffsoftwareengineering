@@ -1,7 +1,3 @@
-/* eslint-disable import/no-extraneous-dependencies */
-
-const withMDX = require("@next/mdx")();
-
-module.exports = withMDX({
+module.exports = {
   reactStrictMode: true,
-});
+};
