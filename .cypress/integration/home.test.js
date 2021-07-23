@@ -12,6 +12,7 @@ const links = [
   },
   { href: "mailto:ismay@wolffsoftwareengineering.nl", name: "contact me" },
   { href: "mailto:ismay@wolffsoftwareengineering.nl", name: "Email" },
+  { href: "https://scholar.social/@ismay", name: "Mastodon" },
   { href: "https://github.com/ismay", name: "Github" },
   {
     href: "https://www.linkedin.com/in/wolffsoftwareengineering",
