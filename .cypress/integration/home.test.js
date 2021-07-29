@@ -1,16 +1,6 @@
 const links = [
   { href: "/", name: "Wolff Software Engineering" },
   { href: "http://danieloverbeek.com/", name: "Daniel Overbeek" },
-  { href: "https://github.com/segmentio/metalsmith", name: "metalsmith" },
-  {
-    href: "https://github.com/styled-components/stylelint-processor-styled-components",
-    name: "stylelint-processor-styled-components",
-  },
-  {
-    href: "https://github.com/ismay/stylelint-no-unsupported-browser-features",
-    name: "stylelint-no-unsupported-browser-features",
-  },
-  { href: "mailto:ismay@wolffsoftwareengineering.nl", name: "contact me" },
   { href: "mailto:ismay@wolffsoftwareengineering.nl", name: "Email" },
   { href: "https://scholar.social/@ismay", name: "Mastodon" },
   { href: "https://github.com/ismay", name: "Github" },
