@@ -1,7 +1,7 @@
+/* Important is used to override next.js/image default styles */
 .image {
-  border: 2px solid var(--color-blue);
-  max-width: 100%;
-  padding: 2px;
+  border: 2px solid var(--color-blue) !important;
+  padding: 2px !important;
 }
 
 .description {
