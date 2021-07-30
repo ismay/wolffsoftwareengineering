@@ -57,6 +57,11 @@
     "stylelint-order": "4.1.0",
     "wait-on": "6.0.0"
   },
+  "renovate": {
+    "extends": [
+      "config:base"
+    ]
+  },
   "browserslist": [
     "defaults",
     "not IE 11"
