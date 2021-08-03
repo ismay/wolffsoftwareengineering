@@ -2,12 +2,15 @@
 
 import "../styles/globals.css";
 import Page from "../components/page";
+import usePanelbear from "../hooks/panelbear";
 
 if (process.env.NEXT_PUBLIC_API_MOCKING === "enabled") {
   require("../.msw");
 }
 
 export default function CustomApp({ Component, pageProps }) {
+  usePanelbear(process.env.NEXT_PUBLIC_PANELBEAR_SITE_ID);
+
   return (
     <Page>
       <Component {...pageProps} />
