@@ -1,11 +1,14 @@
-export const home = {
-  mdx: `## Hi there
+const mdx = `
+## Hi there
 
 <Portrait />
 
-_This is some intro text._
+_Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam imperdiet volutpat eros, in iaculis quam varius nec. Suspendisse a egestas magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit._
 
-This is some body text.
-`,
+Donec et pretium mauris. Etiam vitae nisl pulvinar, congue massa nec, mattis mi. Aliquam id augue fermentum, egestas purus in, bibendum dui. Nunc ac laoreet neque. Nam porta sodales scelerisque.
+`;
+
+export const home = {
+  mdx,
   title: "Home",
 };
