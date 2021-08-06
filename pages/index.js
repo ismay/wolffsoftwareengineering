@@ -15,6 +15,10 @@ export default function Home({ source }) {
     <>
       <Head>
         <title>Wolff Software Engineering</title>
+        <meta
+          content="The company of freelance behavioural scientist and software engineer Ismay Wolff."
+          name="description"
+        />
       </Head>
       <MDXRemote {...source} components={components} />
     </>
