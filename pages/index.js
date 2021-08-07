@@ -34,14 +34,14 @@ export async function getStaticProps() {
     gql`
       query getPage($title: String!) {
         page(where: { title: $title }) {
-          mdx
+          content
         }
       }
     `,
     { title: "Home" }
   );
 
-  const source = await serialize(page.mdx);
+  const source = await serialize(page.content);
 
   return {
     props: { source },

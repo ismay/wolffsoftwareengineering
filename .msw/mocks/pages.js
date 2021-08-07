@@ -1,4 +1,4 @@
-const mdx = `
+const content = `
 ## Hi there
 
 <Portrait />
@@ -9,6 +9,6 @@ Donec et pretium mauris. Etiam vitae nisl pulvinar, congue massa nec, mattis mi.
 `;
 
 export const home = {
-  mdx,
+  content,
   title: "Home",
 };
