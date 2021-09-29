@@ -16,7 +16,6 @@
     "posttest:e2e": "kill-port 3000"
   },
   "dependencies": {
-    "@panelbear/panelbear-nextjs": "1.0.1",
     "graphql-request": "3.5.0",
     "next": "11.1.2",
     "next-mdx-remote": "3.0.4",
