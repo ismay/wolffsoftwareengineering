@@ -16,7 +16,7 @@
     "posttest:e2e": "kill-port 3000"
   },
   "dependencies": {
-    "graphql-request": "3.5.0",
+    "graphql-request": "3.6.0",
     "next": "11.1.2",
     "next-mdx-remote": "3.0.5",
     "prop-types": "15.7.2",
