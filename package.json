@@ -54,7 +54,7 @@
     "stylelint": "13.13.1",
     "stylelint-config-prettier": "8.0.2",
     "stylelint-config-standard": "22.0.0",
-    "stylelint-order": "4.1.0",
+    "stylelint-order": "5.0.0",
     "wait-on": "6.0.0"
   },
   "renovate": {
